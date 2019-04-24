@@ -1,21 +1,12 @@
-class Step
-  DEFAULT_DESCRIPTION = "New Step"
-  attr_accessor :description
-
-  def initialize(args = {})
-    @description = args.fetch( :description, DEFAULT_DESCRIPTION )
-  end
-
-  def description
-    @description
-  end
+class Step < ApplicationRecord
+    belongs_to :project
 
   def set_description( new_description )
-    @description = new_description
+    self.description = new_description
   end
 
   def done?
-    return true if description != DEFAULT_DESCRIPTION
+    return true if description.present?
   end
 
 end

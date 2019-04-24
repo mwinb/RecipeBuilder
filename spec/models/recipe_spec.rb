@@ -5,10 +5,6 @@ RSpec.describe Recipe do
     expect(recipe.name).to eq("Test Recipe")
   end
 
-  it "Expects a recipe to handle an empty name" do
-    recipe = Recipe.new()
-    expect(recipe.name).to eq("Unamed Recipe")
-  end
 
   it "Expects a recipe's name to be changeable" do
     recipe = Recipe.new()
